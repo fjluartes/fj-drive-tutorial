@@ -1,14 +1,27 @@
-import { HydrateClient } from "~/trpc/server";
+import { Breadcrumbs } from "../components/ui/breadcrumbs"
+import { FileList } from "../components/ui/file-list"
+import { UploadButton } from "../components/ui/upload-button"
+import { getFilesByParentId } from "~/lib/mock-data"
 
-export default async function Home() {
+export default function DrivePage({
+  searchParams,
+}: {
+  searchParams: { folder?: string }
+}) {
+  const currentFolder = searchParams.folder ?? "root"
+  const files = getFilesByParentId(currentFolder)
 
   return (
-    <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-          You&apos;re amazing app is here
-        </div>
-      </main>
-    </HydrateClient>
-  );
+    <div className="container mx-auto p-4">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Google Drive Clone</h1>
+        <UploadButton />
+      </div>
+      <div className="space-y-4">
+        <Breadcrumbs currentFolder={currentFolder} />
+        <FileList files={files} />
+      </div>
+    </div>
+  )
 }
+
