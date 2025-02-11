@@ -9,7 +9,7 @@ export function UploadButton() {
   }
 
   return (
-    <Button onClick={handleUpload} variant="outline">
+    <Button onClick={handleUpload} className="bg-blue-600 hover:bg-blue-700 text-white">
       <Upload className="mr-2 h-4 w-4" /> Upload
     </Button>
   )
