@@ -1,7 +1,6 @@
 import { Breadcrumbs } from "../components/ui/breadcrumbs"
 import { FileList } from "../components/ui/file-list"
 import { UploadButton } from "../components/ui/upload-button"
-import { Button } from "../components/ui/button"
 import { getFilesByParentId } from "~/lib/mock-data"
 
 export default function DrivePage({
