@@ -11,6 +11,9 @@ const config = {
     },
     typescript: {
         ignoreBuildErrors: true
+    },
+    drizzle: {
+        ignoreBuildErrors: true
     }
 };
 

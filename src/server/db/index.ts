@@ -16,6 +16,7 @@ const conn =
   globalForDb.conn ??
   createPool({
     host: env.SINGLESTORE_HOST,
+    port: parseInt(env.SINGLESTORE_PORT),
     user: env.SINGLESTORE_USER,
     password: env.SINGLESTORE_PASS,
     database: env.SINGLESTORE_DB_NAME,
